@@ -1,0 +1,30 @@
+#calc-body {
+    display: flex;
+    flex-direction: column;
+    background-color: coral;
+    width: 400px;
+}
+
+.display {
+    background-color: aqua;
+    padding: 50px;
+    margin: 50px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    background-color: darkgreen;
+    margin: 10px 50px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px;
+    background-color: powderblue;
+}
+
+.calc-button {
+    padding: 20px;
+}
