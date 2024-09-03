@@ -10,3 +10,20 @@
 
 // When the user clicks 'equals'
 // Run the calculation as displayed
+
+function add(num1, num2) {
+    return num1 + num2;
+}
+
+
+
+function operate(num1, num2) {
+    if (operator === "add") {
+        return add(num1, num2)
+    }
+}
+let operator = "add";
+let num1 = 3;
+let num2 = 5;
+
+console.log(operate(num1, num2));
