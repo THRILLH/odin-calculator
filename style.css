@@ -11,20 +11,20 @@
     margin: 50px;
 }
 
-.button-container {
+.btn-container {
     display: flex;
     flex-direction: column;
     background-color: darkgreen;
     margin: 10px 50px;
 }
 
-.button-row {
+.btn-row {
     display: flex;
     justify-content: space-evenly;
     margin: 5px;
     background-color: powderblue;
 }
 
-.calc-button {
+.calc-btn {
     padding: 20px;
 }
