@@ -22,22 +22,24 @@ function add(num1, num2) {
 
 
 function operate(one, two) {
+    one = num1;
+    two = num2;
     if (operator === "add") {
-        one = num1;
-        two = num2;
         result = add(one, two);
-        console.log(result);
-        return num1 = result;      
+        console.log(result);   
     }
+    num1 = result;
+    updateDisplay()   
 }
 
 function pressNumber(number) {
-    if (operator === undefined && result === undefined) return num1 = number;
-    else return num2 = number;
+    if (operator === undefined || result !== undefined) num1 = number;
+    else num2 = number;
+    updateDisplay()
 }
 
 function pressOperator(input) {
-    return operator = input;
+    operator = input;
 }
 
 const btn1 = document.querySelector(".btn-1");
@@ -101,3 +103,11 @@ const btnEquals = document.querySelector(".btn-equals");
 btnEquals.addEventListener("click", () => {
     operate(num1, num2);
 });
+
+
+// Show numbers on display -- TEMP --
+const display = document.querySelector(".display");
+
+function updateDisplay() {
+display.textContent = `Num1 = ${num1} Num2 = ${num2} Result = ${result}`;
+}
