@@ -10,14 +10,27 @@ function add(num1, num2) {
     return num1 + num2;
 }
 
+function subtract(num1, num2) {
+    return num1 - num2;
+}
+
+function multiply(num1, num2) {
+    return num1 * num2;
+}
+
+function divide(num1, num2) {
+    return num1 / num2;
+}
+
 
 
 function operate(one, two) {
     one = Number(num1);
     two = Number(num2);
-    if (operator === "add") {
-        result = add(one, two);
-    }
+    if (operator === "add") result = add(one, two);
+    if (operator === "subtract") result = subtract(one, two);
+    if (operator === "multiply") result = multiply(one, two);
+    if (operator === "divide") result = divide(one, two);
     num1 = result;
     num2 = Number(num2);
     updateDisplay()   
@@ -95,6 +108,20 @@ btnPlus.addEventListener("click", () => {
     pressOperator("add");
 })
 
+const btnMinus = document.querySelector(".btn-minus");
+btnMinus.addEventListener("click", () => {
+    pressOperator("subtract");
+})
+
+const btnMultiply = document.querySelector(".btn-multiply");
+btnMultiply.addEventListener("click", () => {
+    pressOperator("multiply");
+})
+
+const btnDivide = document.querySelector(".btn-divide");
+btnDivide.addEventListener("click", () => {
+    pressOperator("divide");
+})
 
 
 const btnEquals = document.querySelector(".btn-equals");
