@@ -42,7 +42,7 @@ function operate() {
 
 function pressNumber(number) {
     if (operator === undefined || result !== undefined) {
-        if (typeof(num1) == "number") num1 = "";
+        if (typeof(num1) == "number") num1 = ""; num2 = "";
         num1 += number;
     }
     else { if (typeof(num2) == "number") num2 = "";
