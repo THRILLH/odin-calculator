@@ -27,6 +27,7 @@ function divide(num1, num2) {
 
 
 function operate() {
+    if (num1 !== "" && num2 !== "") {
     num1 = Number(num1);
     num2 = Number(num2);
     if (operator === "add") result = add(num1, num2);
@@ -35,7 +36,8 @@ function operate() {
     if (operator === "divide") result = divide(num1, num2);
     num1 = result;
     num2 = Number(num2);
-    updateDisplay()   
+    updateDisplay()  
+    } 
 }
 
 function pressNumber(number) {
@@ -50,6 +52,7 @@ function pressNumber(number) {
 }
 
 function pressOperator(input) {
+    if (result == undefined) operate();
     operator = input;
     result = undefined;
     updateDisplay()
