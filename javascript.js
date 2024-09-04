@@ -1,19 +1,10 @@
-// When the user clicks a number button
-// Display the number on screen and record it in a variable
-// If the user clicks another number button
-// Concat that number to the end of the previous one and display
-
-// When the user clicks an operator
-// Prime that operator as the one to be used and display
-
-// Show the next number(s) as in the first step, record and display
-
-// When the user clicks 'equals'
-// Run the calculation as displayed
+// Hitting 'equals' after doing a calculation and typing
+// a new number does the previous calculation on the new number.
+// In reality, nothing should happen.
 let operator;
 let result;
-let num1;
-let num2;
+let num1 = "";
+let num2 = "";
 
 function add(num1, num2) {
     return num1 + num2;
@@ -22,24 +13,31 @@ function add(num1, num2) {
 
 
 function operate(one, two) {
-    one = num1;
-    two = num2;
+    one = Number(num1);
+    two = Number(num2);
     if (operator === "add") {
         result = add(one, two);
-        console.log(result);   
     }
     num1 = result;
+    num2 = Number(num2);
     updateDisplay()   
 }
 
 function pressNumber(number) {
-    if (operator === undefined || result !== undefined) num1 = number;
-    else num2 = number;
+    if (operator === undefined || result !== undefined) {
+        if (typeof(num1) == "number") num1 = "";
+        num1 += number;
+    }
+    else { if (typeof(num2) == "number") num2 = "";
+        num2 += number;
+    }
     updateDisplay()
 }
 
 function pressOperator(input) {
     operator = input;
+    result = undefined;
+    updateDisplay()
 }
 
 const btn1 = document.querySelector(".btn-1");
@@ -109,5 +107,5 @@ btnEquals.addEventListener("click", () => {
 const display = document.querySelector(".display");
 
 function updateDisplay() {
-display.textContent = `Num1 = ${num1} Num2 = ${num2} Result = ${result}`;
+display.textContent = `Num1 = ${num1} Num2 = ${num2} Result = ${result} Operator = ${operator}`;
 }
