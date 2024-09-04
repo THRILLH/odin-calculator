@@ -19,18 +19,20 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
-    return num1 / num2;
+    // Divide by zero stop -- Needs more
+    if (num2 == 0) return console.log("Don't do that");
+    else return num1 / num2;
 }
 
 
 
-function operate(one, two) {
-    one = Number(num1);
-    two = Number(num2);
-    if (operator === "add") result = add(one, two);
-    if (operator === "subtract") result = subtract(one, two);
-    if (operator === "multiply") result = multiply(one, two);
-    if (operator === "divide") result = divide(one, two);
+function operate() {
+    num1 = Number(num1);
+    num2 = Number(num2);
+    if (operator === "add") result = add(num1, num2);
+    if (operator === "subtract") result = subtract(num1, num2);
+    if (operator === "multiply") result = multiply(num1, num2);
+    if (operator === "divide") result = divide(num1, num2);
     num1 = result;
     num2 = Number(num2);
     updateDisplay()   
@@ -126,7 +128,7 @@ btnDivide.addEventListener("click", () => {
 
 const btnEquals = document.querySelector(".btn-equals");
 btnEquals.addEventListener("click", () => {
-    operate(num1, num2);
+    operate();
 });
 
 
