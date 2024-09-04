@@ -1,3 +1,7 @@
+// If you hit an operator before hitting a number
+// it will set the number you then hit as num2.
+// This should be set as num1
+
 let operator;
 let result;
 let num1 = "";
@@ -20,8 +24,6 @@ function divide(num1, num2) {
     if (num2 == 0) return console.log("Don't do that");
     else return num1 / num2;
 }
-
-
 
 function operate() {
     if (num1 !== "" && num2 !== "") {
@@ -54,6 +56,13 @@ function pressOperator(input) {
     operator = input;
     result = undefined;
     updateDisplay()
+}
+
+function clear() {
+    operator = undefined;
+    result = undefined;
+    num1 = "";
+    num2 = "";
 }
 
 const btn1 = document.querySelector(".btn-1");
@@ -136,6 +145,12 @@ const btnEquals = document.querySelector(".btn-equals");
 btnEquals.addEventListener("click", () => {
     operate();
 });
+
+const btnClear = document.querySelector(".btn-clear");
+btnClear.addEventListener("click", () => {
+    clear();
+    updateDisplay();
+})
 
 
 // Show numbers on display -- TEMP --
