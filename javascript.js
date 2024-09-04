@@ -1,6 +1,3 @@
-// Hitting 'equals' after doing a calculation and typing
-// a new number does the previous calculation on the new number.
-// In reality, nothing should happen.
 let operator;
 let result;
 let num1 = "";
@@ -34,6 +31,7 @@ function operate() {
     if (operator === "subtract") result = subtract(num1, num2);
     if (operator === "multiply") result = multiply(num1, num2);
     if (operator === "divide") result = divide(num1, num2);
+    result = result.toFixed(5) // Need code to cut extra zeroes
     num1 = result;
     num2 = Number(num2);
     updateDisplay()  
@@ -106,6 +104,11 @@ btn9.addEventListener("click", () => {
 const btn0 = document.querySelector(".btn-0");
 btn0.addEventListener("click", () => {
     pressNumber(0);
+});
+
+const btnPoint = document.querySelector(".btn-point");
+btnPoint.addEventListener("click", () => {
+    pressNumber(".");
 });
 
 const btnPlus = document.querySelector(".btn-plus");
