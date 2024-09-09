@@ -73,6 +73,10 @@ function clear() {
     result = undefined;
     num1 = "";
     num2 = "";
+    disableButton(btnPlus);
+    disableButton(btnMinus);
+    disableButton(btnMultiply);
+    disableButton(btnDivide);
     enableButton(btnPoint);
 }
 
