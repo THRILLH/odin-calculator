@@ -1,8 +1,8 @@
-// If you hit an operator before hitting a number
-// it will set the number you then hit as num2.
-// This should be set as num1
+// Need to be able to input negative numbers using plus/minus btn
 
-// Need to disable decimal button when there's already a decimal
+// Want message when dividing by zero
+
+// Want message when using brackets and percent buttons
 
 let operator;
 let result;
@@ -52,6 +52,10 @@ function pressNumber(number) {
     else { if (typeof(num2) == "number") num2 = "";
         num2 += number;
     }
+    enableButton(btnPlus);
+    enableButton(btnMinus);
+    enableButton(btnMultiply);
+    enableButton(btnDivide);
     updateDisplay()
 }
 
@@ -160,8 +164,11 @@ btnClear.addEventListener("click", () => {
     updateDisplay();
 })
 
+disableButton(btnPlus);
+disableButton(btnMinus);
+disableButton(btnMultiply);
+disableButton(btnDivide);
 
-// Show numbers on display -- TEMP --
 const display = document.querySelector(".display");
 
 function updateDisplay() {
