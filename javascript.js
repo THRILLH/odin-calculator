@@ -1,5 +1,3 @@
-// Can't make num1 negative when it's the answer we want to use in a new calculation
-
 // C doesn't always clear operators ()
 let operator;
 let result;
@@ -193,7 +191,7 @@ btnPlusMinus.addEventListener("click", () => {
         updateDisplay();
         }
         else num1 = (num1 * -1);
-        updateDisplay();
+        displayAnswer();
     }
     else { if (num2.charAt(0) === "-") makeNum2Positive();
         else makeNum2Negative();
