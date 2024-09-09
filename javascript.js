@@ -187,8 +187,12 @@ btnClear.addEventListener("click", () => {
 const btnPlusMinus = document.querySelector(".btn-plusminus");
 btnPlusMinus.addEventListener("click", () => {
     if (operator === undefined || result !== undefined) {
+        if (typeof num1 === "string") {
         if (num1.charAt(0) === "-") makeNum1Positive();
         else makeNum1Negative();
+        updateDisplay();
+        }
+        else num1 = (num1 * -1);
         updateDisplay();
     }
     else { if (num2.charAt(0) === "-") makeNum2Positive();
