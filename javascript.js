@@ -38,6 +38,7 @@ function operate() {
     result = Number(result.toFixed(5))
     num1 = result;
     num2 = Number(num2);
+    enableButton(btnPoint);
     displayAnswer()  
     } 
 }
@@ -59,6 +60,7 @@ function pressOperator(input) {
     operator = input;
     num2 = ""
     result = undefined;
+    enableButton(btnPoint);
     updateDisplay()
 }
 
@@ -67,6 +69,7 @@ function clear() {
     result = undefined;
     num1 = "";
     num2 = "";
+    enableButton(btnPoint);
 }
 
 const btn1 = document.querySelector(".btn-1");
@@ -122,6 +125,7 @@ btn0.addEventListener("click", () => {
 const btnPoint = document.querySelector(".btn-point");
 btnPoint.addEventListener("click", () => {
     pressNumber(".");
+    disableButton(btnPoint);
 });
 
 const btnPlus = document.querySelector(".btn-plus");
@@ -176,4 +180,12 @@ function displayAnswer() {
         num2 = ${num2}
         operator = ${operator}
         result = ${result}`);
+}
+
+function disableButton(button) {
+    button.disabled = true;
+}
+
+function enableButton(button) {
+    button.disabled = false;
 }
