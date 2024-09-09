@@ -1,6 +1,6 @@
-// Need to be able to input negative numbers using plus/minus btn
+// Can't make num1 negative when it's the answer we want to use in a new calculation
 
-// C doesn't always clear operators
+// C doesn't always clear operators ()
 let operator;
 let result;
 let num1 = "";
@@ -10,8 +10,16 @@ function makeNum1Negative() {
     num1 = "-" + num1;
 }
 
+function makeNum1Positive() {
+    num1 = num1.substring(1);
+}
+
 function makeNum2Negative() {
     num2 = "-" + num2;
+}
+
+function makeNum2Positive() {
+    num2 = num2.substring(1);
 }
 
 function add(num1, num2) {
@@ -179,11 +187,12 @@ btnClear.addEventListener("click", () => {
 const btnPlusMinus = document.querySelector(".btn-plusminus");
 btnPlusMinus.addEventListener("click", () => {
     if (operator === undefined || result !== undefined) {
-        makeNum1Negative();
+        if (num1.charAt(0) === "-") makeNum1Positive();
+        else makeNum1Negative();
         updateDisplay();
     }
-    else { if (typeof(num2) == "number") num2 = "";
-        makeNum2Negative();
+    else { if (num2.charAt(0) === "-") makeNum2Positive();
+        else makeNum2Negative();
         updateDisplay();
     }
 })
