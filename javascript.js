@@ -174,14 +174,24 @@ disableButton(btnMultiply);
 disableButton(btnDivide);
 
 const display = document.querySelector(".display");
+const num1Display = document.querySelector(".num1-display");
+const num2Display = document.querySelector(".num2-display");
+const operatorDisplay = document.querySelector(".operator-display");
+
 
 function updateDisplay() {
-    if (operator === undefined) display.textContent = num1;
-    else display.textContent = `${num1} ${operator} ${num2}`;
+    if (operator === undefined) num1Display.textContent = num1;
+    else {
+        num1Display.textContent = num1;
+        operatorDisplay.textContent = operator;
+        num2Display.textContent = num2;
+    }
 }
 
 function displayAnswer() {
-    display.textContent = num1;
+    num1Display.textContent = num1;
+    operatorDisplay.textContent = "";
+    num2Display.textContent = "";
 }
 
 function disableButton(button) {

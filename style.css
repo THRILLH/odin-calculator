@@ -81,7 +81,7 @@ color: #fbfaff;
 .btn-plus, .btn-equals, .btn-minus, .btn-multiply, .btn-divide {
     font-size: 36px;
 }
-/*
-function text #5dff76 also display text
 
-clear text #c46966
+.operator-display {
+    color: #5dff76;
+}
