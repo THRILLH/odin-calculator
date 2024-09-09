@@ -31,10 +31,10 @@ function operate() {
     if (num1 !== "" && num2 !== "") {
     num1 = Number(num1);
     num2 = Number(num2);
-    if (operator === "add") result = add(num1, num2);
-    if (operator === "subtract") result = subtract(num1, num2);
-    if (operator === "multiply") result = multiply(num1, num2);
-    if (operator === "divide") result = divide(num1, num2);
+    if (operator === "+") result = add(num1, num2);
+    if (operator === "−") result = subtract(num1, num2);
+    if (operator === "×") result = multiply(num1, num2);
+    if (operator === "÷") result = divide(num1, num2);
     result = Number(result.toFixed(5))
     num1 = result;
     num2 = Number(num2);
@@ -138,22 +138,22 @@ btnPoint.addEventListener("click", () => {
 
 const btnPlus = document.querySelector(".btn-plus");
 btnPlus.addEventListener("click", () => {
-    pressOperator("add");
+    pressOperator("+");
 })
 
 const btnMinus = document.querySelector(".btn-minus");
 btnMinus.addEventListener("click", () => {
-    pressOperator("subtract");
+    pressOperator("−");
 })
 
 const btnMultiply = document.querySelector(".btn-multiply");
 btnMultiply.addEventListener("click", () => {
-    pressOperator("multiply");
+    pressOperator("×");
 })
 
 const btnDivide = document.querySelector(".btn-divide");
 btnDivide.addEventListener("click", () => {
-    pressOperator("divide");
+    pressOperator("÷");
 })
 
 
@@ -178,19 +178,10 @@ const display = document.querySelector(".display");
 function updateDisplay() {
     if (operator === undefined) display.textContent = num1;
     else display.textContent = `${num1} ${operator} ${num2}`;
-
-    console.log (`num1 = ${num1}
-        num2 = ${num2}
-        operator = ${operator}
-        result = ${result}`);
 }
 
 function displayAnswer() {
     display.textContent = num1;
-    console.log (`num1 = ${num1}
-        num2 = ${num2}
-        operator = ${operator}
-        result = ${result}`);
 }
 
 function disableButton(button) {
