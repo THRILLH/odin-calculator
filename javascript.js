@@ -57,6 +57,7 @@ function pressNumber(number) {
 function pressOperator(input) {
     if (result == undefined) operate();
     operator = input;
+    num2 = ""
     result = undefined;
     updateDisplay()
 }
