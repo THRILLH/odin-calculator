@@ -1,9 +1,4 @@
 // Need to be able to input negative numbers using plus/minus btn
-
-// Want message when dividing by zero
-
-// Want message when using brackets and percent buttons
-
 let operator;
 let result;
 let num1 = "";
@@ -22,8 +17,11 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
-    // Divide by zero stop -- Needs more
-    if (num2 == 0) return console.log("Don't do that");
+    if (num2 == 0) {
+        num1Display.textContent = "Please don't";
+        operatorDisplay.textContent = "";
+        num2Display.textContent = "";
+    }
     else return num1 / num2;
 }
 
