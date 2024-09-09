@@ -2,6 +2,8 @@
 // it will set the number you then hit as num2.
 // This should be set as num1
 
+// Need to disable decimal button when there's already a decimal
+
 let operator;
 let result;
 let num1 = "";
@@ -36,7 +38,7 @@ function operate() {
     result = result.toFixed(5) // Need code to cut extra zeroes
     num1 = result;
     num2 = Number(num2);
-    updateDisplay()  
+    displayAnswer()  
     } 
 }
 
@@ -157,5 +159,10 @@ btnClear.addEventListener("click", () => {
 const display = document.querySelector(".display");
 
 function updateDisplay() {
-display.textContent = `Num1 = ${num1} Num2 = ${num2} Result = ${result} Operator = ${operator}`;
+    if (operator === undefined) display.textContent = num1;
+    else display.textContent = `${num1} ${operator} ${num2}`;
+}
+
+function displayAnswer() {
+    display.textContent = num1;
 }
