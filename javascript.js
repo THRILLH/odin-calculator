@@ -1,4 +1,3 @@
-// C doesn't always clear operators ()
 let operator;
 let result;
 let num1 = "";
@@ -87,6 +86,7 @@ function clear() {
     result = undefined;
     num1 = "";
     num2 = "";
+    clearDisplay();
     disableButton(btnPlus);
     disableButton(btnMinus);
     disableButton(btnMultiply);
@@ -179,7 +179,6 @@ btnEquals.addEventListener("click", () => {
 const btnClear = document.querySelector(".btn-clear");
 btnClear.addEventListener("click", () => {
     clear();
-    updateDisplay();
 })
 
 const btnPlusMinus = document.querySelector(".btn-plusminus");
@@ -217,6 +216,12 @@ function updateDisplay() {
         operatorDisplay.textContent = operator;
         num2Display.textContent = num2;
     }
+}
+
+function clearDisplay() {
+    num1Display.textContent = "";
+    num2Display.textContent = "";
+    operatorDisplay.textContent = "";
 }
 
 function displayAnswer() {
