@@ -35,7 +35,7 @@ function operate() {
     if (operator === "subtract") result = subtract(num1, num2);
     if (operator === "multiply") result = multiply(num1, num2);
     if (operator === "divide") result = divide(num1, num2);
-    result = result.toFixed(5) // Need code to cut extra zeroes
+    result = Number(result.toFixed(5))
     num1 = result;
     num2 = Number(num2);
     displayAnswer()  
@@ -161,8 +161,17 @@ const display = document.querySelector(".display");
 function updateDisplay() {
     if (operator === undefined) display.textContent = num1;
     else display.textContent = `${num1} ${operator} ${num2}`;
+
+    console.log (`num1 = ${num1}
+        num2 = ${num2}
+        operator = ${operator}
+        result = ${result}`);
 }
 
 function displayAnswer() {
     display.textContent = num1;
+    console.log (`num1 = ${num1}
+        num2 = ${num2}
+        operator = ${operator}
+        result = ${result}`);
 }
